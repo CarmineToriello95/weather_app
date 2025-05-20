@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:weather_app/core/extensions/etiher_extension.dart';
 import 'package:weather_app/core/utils/enums/temperature_unit.dart';
 import 'package:weather_app/features/weather/domain/entities/weather_entity.dart';
@@ -7,6 +8,7 @@ import 'package:weather_app/features/weather/presentation/bloc/weather_bloc_even
 import 'package:weather_app/features/weather/presentation/bloc/weather_bloc_state.dart';
 import 'package:weather_app/features/weather/presentation/models/weather_view_model.dart';
 
+@injectable
 class WeatherBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
   final FetchWeatherForecastByCityUsecase _fetchWeatherForecastByCityUsecase;
   WeatherBloc(this._fetchWeatherForecastByCityUsecase)

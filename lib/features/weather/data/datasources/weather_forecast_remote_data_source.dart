@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 import 'package:weather_app/core/errors/exception.dart';
 import 'package:weather_app/core/errors/weather_forecast/weather_forecast_exception.dart';
 import 'package:weather_app/core/utils/api_utils.dart';
@@ -16,6 +17,7 @@ abstract class WeatherForecastRemoteDataSource {
   });
 }
 
+@Injectable(as: WeatherForecastRemoteDataSource)
 class WeatherForecastRemoteDataSourceImpl
     implements WeatherForecastRemoteDataSource {
   final http.Client _client;

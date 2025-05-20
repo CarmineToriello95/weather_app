@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:weather_app/core/errors/failure.dart';
 import 'package:weather_app/core/errors/weather_forecast/failure_messages.dart';
 import 'package:weather_app/core/errors/weather_forecast/weather_forecast_exception.dart';
@@ -9,6 +10,7 @@ import 'package:weather_app/features/weather/data/models/weather_forecast_item/w
 import 'package:weather_app/features/weather/domain/entities/weather_entity.dart';
 import 'package:weather_app/features/weather/domain/repositories/weather_forecast_repository.dart';
 
+@Injectable(as: WeatherForecastRepository)
 class WeatherForecastRepositoryImpl implements WeatherForecastRepository {
   final WeatherForecastRemoteDataSource _remoteDataSource;
 
