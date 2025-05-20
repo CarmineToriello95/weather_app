@@ -20,3 +20,34 @@ List<WeatherEntity> createTestDailyWeatherListFromApiResponseModel(
           .toList();
   return dailyWeatherEntityList;
 }
+
+List<WeatherEntity> createTestDailyWeatherList() => [
+  WeatherEntity(
+    id: 1,
+    date: DateTime.now(),
+    weatherCondition: 'Clouds',
+    smallIconPath: 'smallIconPath',
+    largeIconPath: 'largeIconPath',
+    temp: 10,
+    tempMax: 11,
+    tempMin: 9,
+    humidity: 20,
+    pressure: 10,
+    wind: 3,
+    city: 'Berlin',
+  ),
+  WeatherEntity(
+    id: 2,
+    date: DateTime.now(),
+    weatherCondition: 'Clouds',
+    smallIconPath: 'smallIconPath',
+    largeIconPath: 'largeIconPath',
+    temp: 10,
+    tempMax: 11,
+    tempMin: 9,
+    humidity: 20,
+    pressure: 10,
+    wind: 3,
+    city: 'Berlin',
+  ),
+];
