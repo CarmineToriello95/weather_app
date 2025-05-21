@@ -28,9 +28,9 @@ class WeatherMetricsWidget extends StatelessWidget {
       ),
       Center(child: Text(temperature, style: TextStyle(fontSize: 64.0))),
       SizedBox(height: 16.0),
-      Text(humidity, style: TextStyle(fontSize: 18.0)),
-      Text(pressure, style: TextStyle(fontSize: 18.0)),
-      Text(wind, style: TextStyle(fontSize: 18.0)),
+      Text('Humidity: $humidity', style: TextStyle(fontSize: 18.0)),
+      Text('Pressure: $pressure', style: TextStyle(fontSize: 18.0)),
+      Text('Wind: $wind', style: TextStyle(fontSize: 18.0)),
     ],
   );
 }

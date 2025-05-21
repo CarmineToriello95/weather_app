@@ -5,23 +5,23 @@ class WeatherImageWidget extends StatelessWidget {
   const WeatherImageWidget({super.key, required this.imagePath});
 
   @override
-  Widget build(BuildContext context) => SizedBox(
-    height: 200,
-    child: Image.network(
-      imagePath,
-      loadingBuilder: (context, child, loadingProgress) {
-        if (loadingProgress == null) return child;
+  Widget build(BuildContext context) => Image.network(
+    imagePath,
+    loadingBuilder: (context, child, loadingProgress) {
+      if (loadingProgress == null) return child;
 
-        return Center(
-          child: CircularProgressIndicator(
-            value:
-                loadingProgress.expectedTotalBytes != null
-                    ? loadingProgress.cumulativeBytesLoaded /
-                        loadingProgress.expectedTotalBytes!
-                    : null,
-          ),
-        );
-      },
-    ),
+      return Center(
+        child: CircularProgressIndicator(
+          value:
+              loadingProgress.expectedTotalBytes != null
+                  ? loadingProgress.cumulativeBytesLoaded /
+                      loadingProgress.expectedTotalBytes!
+                  : null,
+        ),
+      );
+    },
+    errorBuilder: (context, error, stackTrace) {
+      return Center(child: Icon(Icons.broken_image_outlined, size: 64));
+    },
   );
 }

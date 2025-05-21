@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/features/weather/presentation/widgets/weather_page_populated_widget/weather_image_widget.dart';
 
 class WeatherTileWidget extends StatelessWidget {
   final String day;
@@ -34,7 +35,7 @@ class WeatherTileWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(day),
-            Image.network(imagePath),
+            WeatherImageWidget(imagePath: imagePath),
             Text(temperatureRange),
           ],
         ),

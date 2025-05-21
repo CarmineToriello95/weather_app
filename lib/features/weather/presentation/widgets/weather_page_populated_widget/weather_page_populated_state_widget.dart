@@ -30,7 +30,6 @@ class WeatherPagePopulatedStateWidget extends StatelessWidget {
     );
     final headerWidget = WeatherHeaderWidget(
       weatherCondition: state.selectedWeatherDay.weatherCondition,
-      iconPath: state.selectedWeatherDay.largeIconPath,
       selectedTemperatureUnit: state.selectedTemperatureUnit,
       onSelectedTemperatureUnit: onSelectedUnit,
     );
@@ -43,9 +42,9 @@ class WeatherPagePopulatedStateWidget extends StatelessWidget {
       temperature: state.selectedWeatherDay.formattedTemperature(
         state.selectedTemperatureUnit,
       ),
-      pressure: state.selectedWeatherDay.pressure,
-      humidity: state.selectedWeatherDay.humidity,
-      wind: state.selectedWeatherDay.wind,
+      pressure: state.selectedWeatherDay.pressureWithUnit,
+      humidity: state.selectedWeatherDay.humidityWithPercentage,
+      wind: state.selectedWeatherDay.windWithUnit,
       cityName: state.cityName,
     );
     return RefreshIndicator(

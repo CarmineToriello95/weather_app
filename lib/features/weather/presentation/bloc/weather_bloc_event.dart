@@ -32,10 +32,3 @@ class WeatherBlocTemperatureUnitChangedEvent extends WeatherBlocEvent {
   @override
   List<Object?> get props => [temperatureUnit];
 }
-
-class WeatherBlocRefreshDataEvent extends WeatherBlocEvent {
-  const WeatherBlocRefreshDataEvent();
-
-  @override
-  List<Object?> get props => [];
-}

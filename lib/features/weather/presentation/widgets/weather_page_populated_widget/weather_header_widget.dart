@@ -4,14 +4,12 @@ import 'package:weather_app/features/weather/presentation/widgets/weather_page_p
 
 class WeatherHeaderWidget extends StatelessWidget {
   final String weatherCondition;
-  final String iconPath;
   final TemperatureUnit selectedTemperatureUnit;
   final Function(TemperatureUnit) onSelectedTemperatureUnit;
 
   const WeatherHeaderWidget({
     super.key,
     required this.weatherCondition,
-    required this.iconPath,
     required this.selectedTemperatureUnit,
     required this.onSelectedTemperatureUnit,
   });

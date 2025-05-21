@@ -13,9 +13,9 @@ class WeatherViewModel extends Equatable {
   final double temp;
   final double tempMin;
   final double tempMax;
-  final String pressure;
-  final String humidity;
-  final String wind;
+  final int pressure;
+  final int humidity;
+  final int wind;
   final String smallIconPath;
   final String largeIconPath;
 
@@ -57,9 +57,9 @@ class WeatherViewModel extends Equatable {
       longDayFormat: entity.date.longDay,
       shortDayFormat: entity.date.shortDay,
       temp: entity.temp,
-      pressure: 'Pressure: ${entity.pressure.round()} hPa',
-      humidity: 'Humidity: ${entity.humidity.round()}%',
-      wind: 'Wind: ${entity.wind.round()} km/h',
+      pressure: entity.pressure.round(),
+      humidity: entity.humidity.round(),
+      wind: entity.wind.round(),
       tempMin: entity.tempMin,
       tempMax: entity.tempMax,
       smallIconPath: entity.smallIconPath,
@@ -80,4 +80,8 @@ class WeatherViewModel extends Equatable {
     }
     return '${tempMin.round()}°/ ${tempMax.round()}°';
   }
+
+  String get pressureWithUnit => '$pressure hPa';
+  String get humidityWithPercentage => '$humidity%';
+  String get windWithUnit => '$wind km/h';
 }

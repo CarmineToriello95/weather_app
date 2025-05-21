@@ -8,6 +8,7 @@ import 'dart:convert' as _i6;
 import 'dart:typed_data' as _i8;
 
 import 'package:dartz/dartz.dart' as _i4;
+import 'package:flutter_bloc/flutter_bloc.dart' as _i17;
 import 'package:http/http.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i7;
@@ -20,6 +21,14 @@ import 'package:weather_app/features/weather/domain/entities/weather_entity.dart
     as _i12;
 import 'package:weather_app/features/weather/domain/repositories/weather_forecast_repository.dart'
     as _i10;
+import 'package:weather_app/features/weather/domain/usecases/fetch_weather_forecast_by_city_usecase.dart'
+    as _i13;
+import 'package:weather_app/features/weather/presentation/bloc/weather_bloc.dart'
+    as _i14;
+import 'package:weather_app/features/weather/presentation/bloc/weather_bloc_event.dart'
+    as _i16;
+import 'package:weather_app/features/weather/presentation/bloc/weather_bloc_state.dart'
+    as _i15;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -371,4 +380,170 @@ class MockWeatherForecastRepository extends _i1.Mock
               ),
             )),
           ) as _i5.Future<_i4.Either<_i11.Failure, List<_i12.WeatherEntity>>>);
+}
+
+/// A class which mocks [FetchWeatherForecastByCityUsecase].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockFetchWeatherForecastByCityUsecase extends _i1.Mock
+    implements _i13.FetchWeatherForecastByCityUsecase {
+  MockFetchWeatherForecastByCityUsecase() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i5.Future<_i4.Either<_i11.Failure, List<_i12.WeatherEntity>>> call(
+          {required String? params}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [],
+          {#params: params},
+        ),
+        returnValue: _i5
+            .Future<_i4.Either<_i11.Failure, List<_i12.WeatherEntity>>>.value(
+            _FakeEither_3<_i11.Failure, List<_i12.WeatherEntity>>(
+          this,
+          Invocation.method(
+            #call,
+            [],
+            {#params: params},
+          ),
+        )),
+      ) as _i5.Future<_i4.Either<_i11.Failure, List<_i12.WeatherEntity>>>);
+}
+
+/// A class which mocks [WeatherBloc].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockWeatherBloc extends _i1.Mock implements _i14.WeatherBloc {
+  MockWeatherBloc() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i15.WeatherBlocState get state => (super.noSuchMethod(
+        Invocation.getter(#state),
+        returnValue: _i7.dummyValue<_i15.WeatherBlocState>(
+          this,
+          Invocation.getter(#state),
+        ),
+      ) as _i15.WeatherBlocState);
+
+  @override
+  _i5.Stream<_i15.WeatherBlocState> get stream => (super.noSuchMethod(
+        Invocation.getter(#stream),
+        returnValue: _i5.Stream<_i15.WeatherBlocState>.empty(),
+      ) as _i5.Stream<_i15.WeatherBlocState>);
+
+  @override
+  bool get isClosed => (super.noSuchMethod(
+        Invocation.getter(#isClosed),
+        returnValue: false,
+      ) as bool);
+
+  @override
+  void add(_i16.WeatherBlocEvent? event) => super.noSuchMethod(
+        Invocation.method(
+          #add,
+          [event],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void onEvent(_i16.WeatherBlocEvent? event) => super.noSuchMethod(
+        Invocation.method(
+          #onEvent,
+          [event],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void emit(_i15.WeatherBlocState? state) => super.noSuchMethod(
+        Invocation.method(
+          #emit,
+          [state],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void on<E extends _i16.WeatherBlocEvent>(
+    _i17.EventHandler<E, _i15.WeatherBlocState>? handler, {
+    _i17.EventTransformer<E>? transformer,
+  }) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #on,
+          [handler],
+          {#transformer: transformer},
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void onTransition(
+          _i17.Transition<_i16.WeatherBlocEvent, _i15.WeatherBlocState>?
+              transition) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #onTransition,
+          [transition],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  _i5.Future<void> close() => (super.noSuchMethod(
+        Invocation.method(
+          #close,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+
+  @override
+  void onChange(_i17.Change<_i15.WeatherBlocState>? change) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #onChange,
+          [change],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void addError(
+    Object? error, [
+    StackTrace? stackTrace,
+  ]) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addError,
+          [
+            error,
+            stackTrace,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void onError(
+    Object? error,
+    StackTrace? stackTrace,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #onError,
+          [
+            error,
+            stackTrace,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
 }
