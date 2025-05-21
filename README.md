@@ -1,7 +1,8 @@
 # Weather App
 
-The app shows the weather for a given city. 
-By default, the app shows the weather for Berlin. However, there is the possibility to search for other cities thanks to a search function. In particular, the app:
+The app shows the weather for a given city. <br>
+By default, the app displays the weather for Berlin. However, it is possible to search for other cities using the built-in search functionality. <br>
+In particular, the app:
 
 - Shows a loading indicator when fetching the data.
 - Shows a list of weather item, each one including day of the week abbreviation, weather condition
