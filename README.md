@@ -48,7 +48,7 @@ The project has been implemented following the [clean code architecture describe
 
 - `presentation/` – UI widgets and state managemen. The **BLoC** pattern has been used for state management.
 - `domain/` – Business logic, use cases, and abstract repository interfaces
-- `data/` – Models, data sources (e.g., APIs, local storage), and repository implementations
+- `data/` – Models, data sources (e.g. APIs), and repository implementations
 
 The reason is because this architecture promotes clear separation of concerns, scalability, and testability.
 
