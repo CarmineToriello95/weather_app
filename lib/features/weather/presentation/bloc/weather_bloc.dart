@@ -34,8 +34,9 @@ class WeatherBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
       params: event.city,
     );
 
-    /// If calling the usecase for fetching the weather forecast is successful
     if (result.isRight()) {
+      /// The usecase for fetching the weather forecast is successful
+
       final List<WeatherEntity> dailyWeatherList = result.asRight();
 
       emit(

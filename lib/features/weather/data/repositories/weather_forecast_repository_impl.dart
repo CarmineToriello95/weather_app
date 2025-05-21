@@ -25,9 +25,10 @@ class WeatherForecastRepositoryImpl implements WeatherForecastRepository {
           .fetchWeatherForecastByCity(cityName: cityName);
 
       /// The list received by the api contains a list of 40 items,
-      /// with a 5 days forecast with 3-hour step.
+      /// providing weather forecast data in 3-hour intervals for the next 5 days.
+      /// https://openweathermap.org/forecast5
       ///
-      /// Example:
+      /// Example of date and time corresponding to items in the list at a certain index:
       /// threeHourlyWeatherList[0] = 2025-05-20 21:00:00
       /// threeHourlyWeatherList[8] = 2025-05-21 21:00:00
       /// threeHourlyWeatherList[16] = 2025-05-22 21:00:00
@@ -37,15 +38,16 @@ class WeatherForecastRepositoryImpl implements WeatherForecastRepository {
       final List<WeatherForecastItemModel> threeHourlyWeatherList =
           apiResponseModel.list;
 
-      /// It will contain the daily forecast list of 5 days, only one element per day.
-      /// The element of each day will have the same forecasted time.
+      /// In this application, the daily weather is extracted by selecting
+      /// one weather forecast entry per day at the same time of day.
+      /// This approach ensures consistency across days.
       /// Taking the above example, the following list will contain the elements at
       /// position [0,8,16,24,32].
       final List<WeatherForecastItemModel> dailyWeatherList =
           <WeatherForecastItemModel>[];
 
-      /// Take the elements at index [0,8,16,24,32], ensuring one item per day
-      /// with the same forecasted time.
+      /// Take the elements at index [0,8,16,24,32],
+      /// selecting one weather forecast entry per day at the same time of day.
       /// Please check the example above to have an idea of what the list will contain
       for (int i = 0; i < threeHourlyWeatherList.length; i += 8) {
         dailyWeatherList.add(threeHourlyWeatherList[i]);

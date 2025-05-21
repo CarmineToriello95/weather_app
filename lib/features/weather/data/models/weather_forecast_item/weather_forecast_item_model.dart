@@ -42,6 +42,7 @@ class WeatherForecastItemModel extends Equatable {
   List<Object?> get props => [dt];
 
   WeatherEntity toEntity({required String city}) => WeatherEntity(
+    /// dt is the time of data forecasted, unix, UTC, as stated here https://openweathermap.org/forecast5.
     id: dt,
     date: DateTime.parse(dtTxt),
     weatherCondition: weather.first.description,
