@@ -73,7 +73,7 @@ class WeatherPagePopulatedStateWidget extends StatelessWidget {
                   ),
               SizedBox(height: 16.0),
               SizedBox(
-                height: 200,
+                height: 180,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: state.dailyWeatherList.length,

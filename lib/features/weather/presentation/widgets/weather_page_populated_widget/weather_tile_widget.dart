@@ -24,8 +24,8 @@ class WeatherTileWidget extends StatelessWidget {
       border: Border.all(color: Colors.blue.shade200, width: 2),
       color: isSelected ? Colors.blue.shade200 : Colors.transparent,
     ),
-    width: 160,
-    margin: EdgeInsets.all(16.0),
+    width: 140,
+    margin: EdgeInsets.symmetric(horizontal: 8.0),
     child: InkWell(
       borderRadius: BorderRadius.circular(10),
       onTap: onTap,
