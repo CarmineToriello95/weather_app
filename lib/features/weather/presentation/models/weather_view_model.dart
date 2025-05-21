@@ -5,6 +5,8 @@ import 'package:weather_app/core/extensions/string_extension.dart';
 import 'package:weather_app/core/utils/enums/temperature_unit.dart';
 import 'package:weather_app/features/weather/domain/entities/weather_entity.dart';
 
+/// Presentation layer representation of a daily weather forecast
+/// It contains the information to display in the widgets.
 class WeatherViewModel extends Equatable {
   final int id;
   final String weatherCondition;
