@@ -34,8 +34,11 @@ class WeatherPagePopulatedStateWidget extends StatelessWidget {
       onSelectedTemperatureUnit: onSelectedUnit,
     );
 
-    final imageWidget = WeatherImageWidget(
-      imagePath: state.selectedWeatherDay.largeIconPath,
+    final imageWidget = SizedBox(
+      height: 200,
+      child: WeatherImageWidget(
+        imagePath: state.selectedWeatherDay.largeIconPath,
+      ),
     );
 
     final metricsWidget = WeatherMetricsWidget(
